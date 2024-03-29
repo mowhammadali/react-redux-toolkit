@@ -1,0 +1,39 @@
+.todosContainer {
+    width: 100%;
+    margin: 50px 0;
+    padding: 0 50px;
+}
+
+.todosActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 45%;
+}
+
+.todosWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-rows: auto;
+    grid-row-gap: 30px;
+    grid-column-gap: 40px;
+    justify-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .todosActions {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .todosActions {
+        width: 100%;
+    }
+
+    .todosContainer {
+        padding: 0 20px;
+    }
+}
