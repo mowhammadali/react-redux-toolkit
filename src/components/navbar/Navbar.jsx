@@ -1,33 +1,26 @@
-import React, { useState } from "react"
-import { Box, Tab} from "@mui/material"
-import { useNavigate } from "react-router-dom";
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
+import React from "react"
+import { NavLink , Link, useNavigate } from "react-router-dom"
+import css from './Nav.module.css';
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const [value, setValue] = React.useState("1");
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue)
-    }
-
     return (
-        <Box sx={{ width: "100%", typography: "body1" , backgroundColor: '#f5f5f5'}}>
-            <TabContext value={value} >
-                <Box sx={{ borderBottom: 1, borderColor: "divider"}}>
-                    <TabList
-                        onChange={handleChange}
-                        aria-label="lab API tabs example"
-                        sx={{paddingTop: '10px'}}
-                    >
-                        <Tab label="Todo List" value="1" onClick={() => navigate('/')}/>
-                        <Tab label="Users" value="2" onClick={() => navigate('/users')}/>
-                        <Tab label="Create User" value="3" onClick={() => navigate('/create-user')}/>
-                    </TabList>
-                </Box>
-            </TabContext>
-        </Box>
+        <nav className={css.navbarContainer}>
+            <NavLink className={css.link} to={"/"}
+                style={(props) => ({color: props.isActive ? '#2760c5' : '#565555' ,
+                transform: props.isActive ? 'scale(1.2)' : 'scale(1)'})}>
+                Todo List
+            </NavLink>
+            <NavLink className={css.link} to={"/users"}
+                style={(props) => ({color: props.isActive ? '#2760c5' : '#565555' ,
+                transform: props.isActive ? 'scale(1.2)' : 'scale(1)'})}>
+                Users
+            </NavLink>
+            <NavLink className={css.link} to={"/create-user"}
+                style={(props) => ({color: props.isActive ? '#2760c5' : '#565555' ,
+                transform: props.isActive ? 'scale(1.2)' : 'scale(1)'})}>
+                Create User
+            </NavLink>
+        </nav>
     )
 }
 

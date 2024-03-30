@@ -1,0 +1,24 @@
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 5px 1px #e6e6e6 , -1px -1px 5px 1px #e6e6e6;
+}
+
+.para {
+    font-size: 20px;
+    color: #5a5a5a;
+}
+
+.infos {
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #6bc9ba;
+    color: white;
+    opacity: .8;
+}
